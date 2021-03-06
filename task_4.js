@@ -65,28 +65,33 @@ Laptop.prototype.createNewFolder = function(folderName){
 }
 
 Laptop.prototype.startCalc = function(num1, num2, op){
-  switch(op){
-    case "+":
-      let sum = (+num1) + (+num2);
-      console.log(`Результат вычисления: ${sum}`);
-      break;
-    case "-":
-        let diff = (+num1) - (+num2);
-        console.log(`Результат вычисления: ${diff}`);
+  if(this.state){
+    switch(op){
+      case "+":
+        let sum = (+num1) + (+num2);
+        console.log(`Результат вычисления: ${sum}`);
         break;
-    case "*":
-      let mul = (+num1) * (+num2);
-      console.log(`Результат вычисления: ${mul}`);
-      break;
-    case "/":
-      if (num1 > num2){
-        let div = (+num1) / (+num2);
-        console.log(`Результат вычисления: ${div}`);
+      case "-":
+          let diff = (+num1) - (+num2);
+          console.log(`Результат вычисления: ${diff}`);
+          break;
+      case "*":
+        let mul = (+num1) * (+num2);
+        console.log(`Результат вычисления: ${mul}`);
+        break;
+      case "/":
+        if (num1 > num2){
+          let div = (+num1) / (+num2);
+          console.log(`Результат вычисления: ${div}`);
+        }
+        break;
+      default:
+        console.log("Вы ошиблись");
       }
-      break;
-    default:
-      console.log("Вы ошиблись")
-  }}
+  }else{
+   console.log("Turn ON device first.")
+}
+  }
 
 
 
